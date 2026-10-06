@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuhurjonova Shirin - Shaxsiy Portfolio</title>
+  <meta name="description" content="Zuhurjonova Shirin Shohruh qizi – Yosh IT ishqibozi, dasturlash va xorijiy tillarni o'rganuvchi iqtidorli o'quvchining shaxsiy portfolio veb-sayti." />
+  <meta name="author" content="Zuhurjonova Shirin Shohruh qizi" />
+  <meta name="theme-color" content="#080c14" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zuhurjonova Shirin - Shaxsiy Portfolio" />
+  <meta property="og:description" content="Zuhurjonova Shirin Shohruh qizi – Yosh IT ishqibozi, dasturlash va xorijiy tillarni o'rganuvchi iqtidorli o'quvchining shaxsiy portfolio veb-sayti." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Syne"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brandDark: '#080c14',
+            surfaceDark: '#0e1424',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      background-color: #080c14;
+      color: #e2e8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .font-display {
+      font-family: 'Syne', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyan-500/30 selection:text-cyan-200 min-h-screen flex flex-col">
+
+  <!-- TOP NAVBAR -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#080c14]/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <!-- Zone 1: Logo -->
+      <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-1 group font-display">
+        <span>Shirin</span>
+        <span class="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-purple-400 transition-colors inline-block"></span>
+      </a>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">Men haqimda</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">Ko'nikmalar</a>
+        <a href="#hobbies" class="hover:text-cyan-400 transition-colors">Qiziqishlar</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Bog'lanish</a>
+      </nav>
+
+      <!-- Zone 3: CTA Button -->
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/szuhurjonova" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 rounded-lg shadow-md shadow-cyan-500/20 transition-all">
+          <i class="fa-brands fa-telegram text-sm"></i>
+          <span>Telegram</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700/60 rounded-lg transition-colors">
+          <span>Bog'lanish</span>
+        </a>
+        <button id="mobile-toggle" aria-label="Menyu" class="md:hidden p-2 text-slate-300 hover:text-white rounded-lg">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0c1220]/95 backdrop-blur-xl border-b border-slate-800 px-6 py-5">
+      <nav class="flex flex-col gap-3">
+        <a href="#about" class="py-2 text-sm font-medium text-slate-300 hover:text-cyan-400">Men haqimda</a>
+        <a href="#skills" class="py-2 text-sm font-medium text-slate-300 hover:text-cyan-400">Ko'nikmalar</a>
+        <a href="#hobbies" class="py-2 text-sm font-medium text-slate-300 hover:text-cyan-400">Qiziqishlar</a>
+        <a href="#contact" class="py-2 text-sm font-medium text-slate-300 hover:text-cyan-400">Bog'lanish</a>
+        <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+          <a href="https://t.me/szuhurjonova" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-slate-900 bg-cyan-400 rounded-lg">
+            <i class="fa-brands fa-telegram"></i>
+            <span>Telegram orqali yozish</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1">
+    
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+      <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-500/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-medium text-cyan-400 tracking-wide uppercase mb-4">
+              <span>Yosh IT Ishqibozi</span>
+              <span class="text-slate-600">·</span>
+              <span>Ko'p Tilli Ta'lim</span>
+              <span class="text-slate-600">·</span>
+              <span class="text-slate-400">Tug'ilgan sana: 13.07.2013</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 font-display leading-[1.12]">
+              Assalomu alaykum, <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400">
+                Zuhurjonova Shirin Shohruh qizi
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6 max-w-2xl">
+              Axborot texnologiyalari (IT), nemis va ingliz tillarini qunt bilan o'rganayotgan yosh istiqbolli o'quvchi. 
+              Dasturlash sirlarini kashf etish, raqamli loyihalar yaratish va ijodkorlik bilan yangi marralar sari intilaman.
+            </p>
+
+            <div class="w-full bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 mb-8 backdrop-blur-sm">
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <i class="fa-solid fa-terminal text-cyan-400"></i>
+                <span>Hozirgi Asosiy Yo'nalishlar & Ta'lim:</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-slate-200">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                  Axborot Texnologiyalari (IT)
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  Nemis tili (Deutsch)
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                  Ingliz tili (English)
+                </span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 mb-8">
+              <a href="#contact" class="px-6 py-3.5 text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-sky-300 hover:from-cyan-300 rounded-xl shadow-lg shadow-cyan-500/25 transition-all flex items-center gap-2">
+                <span>Bog'lanish</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </a>
+
+              <a href="#skills" class="px-6 py-3.5 text-sm font-medium text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700/70 rounded-xl transition-all flex items-center gap-2">
+                <span>Ko'nikmalarni ko'rish</span>
+                <i class="fa-solid fa-arrow-down text-cyan-400 text-xs"></i>
+              </a>
+
+              <a href="https://t.me/szuhurjonova" target="_blank" class="px-4 py-3.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-telegram text-sky-400"></i>
+                <span>@szuhurjonova</span>
+              </a>
+            </div>
+
+            <div class="flex items-center gap-5 text-slate-400 text-xs pt-4 border-t border-slate-800/60 w-full">
+              <a href="mailto:szuhurjonova@gmail.com" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+                <i class="fa-solid fa-envelope"></i>
+                <span>szuhurjonova@gmail.com</span>
+              </a>
+              <span class="text-slate-700">·</span>
+              <a href="tel:+998501799115" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+                <i class="fa-solid fa-phone"></i>
+                <span>+998 50 179 9115</span>
+              </a>
+              <span class="text-slate-700 hidden sm:inline">·</span>
+              <a href="https://instagram.com/s_zuhurjonova_07" target="_blank" class="hidden sm:flex items-center gap-1.5 hover:text-purple-400 transition-colors">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@s_zuhurjonova_07</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column (Avatar & Badges) -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+            <div class="relative w-full max-w-sm sm:max-w-md">
+              <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur-lg opacity-40 -z-10"></div>
+              
+              <div class="relative rounded-2xl overflow-hidden border border-slate-800 bg-[#0d1322] shadow-2xl aspect-square flex items-center justify-center">
+                <img src="./assets/images/shirin_hero_avatar_1791298066614.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80'" alt="Zuhurjonova Shirin" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-[#080c14]/20 to-transparent pointer-events-none"></div>
+
+                <div class="absolute bottom-4 left-4 right-4 p-3 bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-xl">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-sm font-bold text-white font-display">Shirin Zuhurjonova</p>
+                      <p class="text-xs text-slate-400">13.07.2013 · Toshkent, O'zbekiston</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                      <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Tag 1 -->
+              <div class="absolute -top-4 -right-4 sm:-right-6 bg-slate-900/90 border border-slate-800 backdrop-blur-md rounded-xl p-3 shadow-xl flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                  <i class="fa-solid fa-globe text-xs"></i>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-400 leading-none">O'rganilayotgan tillar</p>
+                  <p class="text-xs font-semibold text-slate-100 mt-1">Nemis · Ingliz · Rus</p>
+                </div>
+              </div>
+
+              <!-- Floating Tag 2 -->
+              <div class="absolute -bottom-4 -left-4 sm:-left-6 bg-slate-900/90 border border-slate-800 backdrop-blur-md rounded-xl p-3 shadow-xl flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                  <i class="fa-solid fa-code text-xs"></i>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-400 leading-none">Asosiy e'tibor</p>
+                  <p class="text-xs font-semibold text-slate-100 mt-1">Axborot Texnologiyalari (IT)</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mb-16">
+          <div class="text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-2">01. Shaxsiyat & Dunyoqarash</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">Men Haqimda</h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Men — Zuhurjonova Shirin Shohruh qizi. Zamonaviy axborot texnologiyalari, chet tillari va ijodkorlik orqali o'z salohiyatimni kashf etib kelayotgan yosh o'quvchiman.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+          <!-- Left Details Card -->
+          <div class="lg:col-span-5 bg-slate-900/70 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-md">
+            <h3 class="text-xl font-bold text-white mb-6 font-display flex items-center gap-2">
+              <i class="fa-regular fa-user text-cyan-400"></i>
+              <span>Shaxsiy Ma'lumotlar</span>
+            </h3>
+
+            <div class="space-y-4 text-sm">
+              <div class="pb-3 border-b border-slate-800/80">
+                <span class="text-xs text-slate-500 block mb-0.5">To'liq ism-familiya:</span>
+                <span class="font-semibold text-slate-100 text-base">Zuhurjonova Shirin Shohruh qizi</span>
+              </div>
+              <div class="pb-3 border-b border-slate-800/80 flex items-center justify-between">
+                <div>
+                  <span class="text-xs text-slate-500 block mb-0.5">Tug'ilgan sana:</span>
+                  <span class="font-semibold text-slate-200">13-iyul, 2013-yil</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-slate-500 block mb-0.5">Sana:</span>
+                  <span class="font-mono text-cyan-400 text-xs">13.07.2013</span>
+                </div>
+              </div>
+              <div class="pb-3 border-b border-slate-800/80">
+                <span class="text-xs text-slate-500 block mb-0.5">Ona tili:</span>
+                <span class="font-semibold text-slate-200">O'zbek tili (Ona tili)</span>
+              </div>
+              <div class="pb-3 border-b border-slate-800/80">
+                <span class="text-xs text-slate-500 block mb-1">O'rganilayotgan xorijiy tillar:</span>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="text-slate-300 font-medium">Nemis tili (Deutsch)</span>
+                  <span class="text-slate-600">·</span>
+                  <span class="text-slate-300 font-medium">Ingliz tili (English)</span>
+                  <span class="text-slate-600">·</span>
+                  <span class="text-slate-300 font-medium">Rus tili (Русский)</span>
+                </div>
+              </div>
+              <div class="pb-3 border-b border-slate-800/80">
+                <span class="text-xs text-slate-500 block mb-1">Asosiy e'tibor & O'qish:</span>
+                <span class="text-cyan-300 font-medium block">Axborot Texnologiyalari (IT), Nemis tili, Ingliz tili</span>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 block mb-1">Qiziqishlar & Xobbilar:</span>
+                <div class="flex items-center gap-3 text-slate-300 text-xs">
+                  <span class="flex items-center gap-1.5"><i class="fa-solid fa-palette text-purple-400"></i> Rasm chizish</span>
+                  <span class="text-slate-600">·</span>
+                  <span class="flex items-center gap-1.5"><i class="fa-solid fa-book-open text-cyan-400"></i> Kitob o'qish</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Narrative -->
+          <div class="lg:col-span-7 flex flex-col justify-between h-full space-y-6">
+            <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
+              <h3 class="text-xl font-bold text-white mb-4 font-display flex items-center gap-2">
+                <i class="fa-regular fa-compass text-purple-400"></i>
+                <span>Mening Maqsadim va IT intilishim</span>
+              </h3>
+              <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                  Bolalikdan kompyuter va texnologiyalarning qanday ishlashiga qiziqib kelganman. Veb-sahifalar qanday yaratiladi, dasturlar qanday qilib insonlarning og'irini yengil qiladi — bular mening eng sevimli savollarimdir.
+                </p>
+                <p>
+                  Hozirda men <strong class="text-cyan-300 font-medium">Axborot Texnologiyalari (IT)</strong> yo'nalishida boshlang'ich dasturlash, algoritmik mantiq hamda vizual tizimlarni qunt bilan o'rganmoqdaman. Har bir yangi yozilgan kod qatori menga katta zavq bag'ishlaydi.
+                </p>
+                <p>
+                  Shu bilan birga chet el manbalaridan mustaqil o'rganish va erkin muloqot qilish uchun <strong class="text-purple-300 font-medium">nemis, ingliz va rus tillariga</strong> alohida qunt bilan yondashmoqdaman.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-100 mb-1">IT Ta'limi</h4>
+                <p class="text-xs text-slate-400">Algoritmlar va zamonaviy dasturlash mantig'i.</p>
+              </div>
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3">
+                  <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-100 mb-1">Ko'p Tilli Muhit</h4>
+                <p class="text-xs text-slate-400">Nemis va ingliz tillarida faol o'rganish.</p>
+              </div>
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+                <div class="w-8 h-8 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center mb-3">
+                  <i class="fa-solid fa-paintbrush"></i>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-100 mb-1">Ijodiy Did</h4>
+                <p class="text-xs text-slate-400">Rasm chizish va kitob orqali estetik tasavvur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div class="max-w-2xl">
+            <div class="text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-2">02. Qobiliyatlar & Til ko'nikmalari</div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">Ko'nikmalar va Tillar</h2>
+            <p class="mt-3 text-slate-400 text-base leading-relaxed">
+              Axborot texnologiyalari (IT) bo'yicha amaliy bilimlar va har kuni mustahkamlanib borayotgan tillar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <!-- Skill 1 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Asosiy & Amaliy</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">Web Dasturlash (HTML & CSS)</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Veb-sahifalar tuzilishi, semantik teglari va zamonaviy moslashuvchan dizayn asoslari.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-cyan-400 to-sky-400 rounded-full" style="width: 85%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">HTML5 · CSS3 · Moslashuvchan dizayn</div>
+          </div>
+
+          <!-- Skill 2 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">O'rganilmoqda</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">Algoritmik Mantiq & Dasturlash</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Mantiqiy fikrlash, shart operatorlari va algoritmlar tuzish qobiliyati.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-cyan-400 to-sky-400 rounded-full" style="width: 78%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">Mantiq · Algoritmlar · Funksiyalar</div>
+          </div>
+
+          <!-- Skill 3 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Boshlang'ich-O'rta</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">Python Asoslari</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Python sintaksisi, o'zgaruvchilar, ro'yxatlar va sodda dasturlar yaratish.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-cyan-400 to-sky-400 rounded-full" style="width: 70%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">Python 3 · Skriptlar · Mantiq</div>
+          </div>
+
+          <!-- Language 1 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Ona tili</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">O'zbek Tili</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Ona tilim — nutq, adabiyot va fikrni ravon, ifodali bayon etishda to'liq mahorat.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full" style="width: 100%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">Mukammal · Ravon nutq · Adabiyot</div>
+          </div>
+
+          <!-- Language 2 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Faol o'rganilmoqda (A2-B1)</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">Ingliz Tili (English)</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">IT terminologiyasi, darsliklar mutolaasi va kundalik erkin muloqot.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full" style="width: 75%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">IT English · Grammar · Speaking</div>
+          </div>
+
+          <!-- Language 3 -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-400">A1-A2 daraja</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 font-display">Nemis Tili (Deutsch)</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">Fonetik qoidalar, grammatik strukturalar, suhbat va yangi so'zlar.</p>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-3">
+              <div class="h-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full" style="width: 65%"></div>
+            </div>
+            <div class="text-[11px] text-slate-500">Deutsch A1/A2 · Wortschatz · Muloqot</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES SECTION -->
+    <section id="hobbies" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mb-12">
+          <div class="text-xs font-semibold text-purple-400 tracking-wider uppercase mb-2">03. Ilhom & Ijodkorlik</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">Qiziqishlar va Xobbilar</h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Dasturlashdan tashqari vaqtlarda qalbimga quvonch va yangi g'oyalar bag'ishlovchi mashg'ulotlar: Rasm chizish va Kitob mutolaasi.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Hobby 1: Drawing -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden aspect-video mb-6 border border-slate-800">
+                <img src="./assets/images/drawing_art_hobby_1791298080700.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80'" alt="Rasm chizish" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex items-center gap-2 text-purple-400 text-xs font-semibold uppercase mb-2">
+                <i class="fa-solid fa-paintbrush"></i>
+                <span>Ijodiy San'at</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 font-display">Rasm Chizish (Drawing)</h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+                Rasm chizish — bu tasavvurni vizual shakllantirish vositasi. Eskizlar, ranglar uyg'unligi va raqamli illyustratsiyalar orqali UI/UX dizayn sezgimni charxlayman.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex justify-between">
+              <span>Sevimli uslub:</span>
+              <span class="text-slate-200 font-medium">Eskizlar & Planshet</span>
+            </div>
+          </div>
+
+          <!-- Hobby 2: Reading -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden aspect-video mb-6 border border-slate-800">
+                <img src="./assets/images/reading_books_hobby_1791298092411.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80'" alt="Kitob mutolaasi" class="w-full h-full object-cover" />
+              </div>
+              <div class="flex items-center gap-2 text-cyan-400 text-xs font-semibold uppercase mb-2">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Mutolaa & Bilim</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 font-display">Kitob O'qish (Reading)</h3>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+                Kitoblar — bilimlar xazinasi. IT sohasidagi darsliklar, badiiy klassika, nemis va ingliz tillaridagi hikoyalarni o'qish orqali dunyoqarashimni boyitaman.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex justify-between">
+              <span>Odat:</span>
+              <span class="text-cyan-300 font-medium">Har kuni 30-40 daqiqa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Canvas for Drawing -->
+        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 sm:p-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4 pb-3 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-palette text-cyan-400"></i>
+              <span class="text-xs font-semibold text-slate-200 uppercase tracking-wider">Interaktiv Eskiz Doskasi</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="clearMyCanvas()" class="px-3 py-1.5 rounded-lg bg-slate-900 text-slate-300 hover:text-white border border-slate-800 text-xs">
+                <i class="fa-solid fa-trash-can mr-1"></i> Tozalash
+              </button>
+              <button onclick="downloadMyCanvas()" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 border border-cyan-500/30 text-xs font-medium">
+                <i class="fa-solid fa-download mr-1"></i> Yuklab olish
+              </button>
+            </div>
+          </div>
+          <canvas id="standalone-canvas" class="w-full h-64 rounded-xl border border-slate-800 bg-[#0b0f19] cursor-crosshair block touch-none"></canvas>
+          <p class="text-[11px] text-slate-500 mt-2 text-right">Sichqoncha yoki sensorli ekran yordamida erkin chizishingiz mumkin.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mb-16">
+          <div class="text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-2">04. Aloqa & Hamkorlik</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">Bog'lanish</h2>
+          <p class="mt-3 text-slate-400 text-base leading-relaxed">
+            Men bilan yangi loyihalar yoki ta'limiy tajribalar haqida fikr almashish uchun quyidagi qulay kanallar orqali bog'lanishingiz mumkin.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <!-- Email Card -->
+          <div class="bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <button onclick="copyToClip('szuhurjonova@gmail.com', this)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white" title="Nusxa olish">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <span class="text-xs text-slate-500 font-medium block">Elektron pochta</span>
+              <p class="text-sm font-semibold text-slate-100 truncate mt-0.5">szuhurjonova@gmail.com</p>
+            </div>
+            <a href="mailto:szuhurjonova@gmail.com" class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-semibold text-cyan-400 flex items-center gap-1">
+              <span>Xat yozish</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <button onclick="copyToClip('+998501799115', this)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white" title="Nusxa olish">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <span class="text-xs text-slate-500 font-medium block">Telefon raqam</span>
+              <p class="text-sm font-semibold text-slate-100 mt-0.5">+998 50 179 9115</p>
+            </div>
+            <a href="tel:+998501799115" class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-semibold text-cyan-400 flex items-center gap-1">
+              <span>Qo'ng'iroq qilish</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Telegram Card -->
+          <div class="bg-slate-900/60 border border-slate-800 hover:border-sky-500/50 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
+                <button onclick="copyToClip('@szuhurjonova', this)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white" title="Nusxa olish">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <span class="text-xs text-slate-500 font-medium block">Telegram profil</span>
+              <p class="text-sm font-semibold text-slate-100 mt-0.5">@szuhurjonova</p>
+            </div>
+            <a href="https://t.me/szuhurjonova" target="_blank" class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-semibold text-sky-400 flex items-center gap-1">
+              <span>Telegramda yozish</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="bg-slate-900/60 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <button onclick="copyToClip('@s_zuhurjonova_07', this)" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white" title="Nusxa olish">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <span class="text-xs text-slate-500 font-medium block">Instagram profil</span>
+              <p class="text-sm font-semibold text-slate-100 mt-0.5">@s_zuhurjonova_07</p>
+            </div>
+            <a href="https://instagram.com/s_zuhurjonova_07" target="_blank" class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-semibold text-purple-400 flex items-center gap-1">
+              <span>Sahifaga o'tish</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fast actions & vCard -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h4 class="text-lg font-bold text-white font-display mb-1">Elektron Vizitka (vCard)</h4>
+            <p class="text-xs text-slate-400">Kontakt ma'lumotlarini smartfoningiz kitobchasiga bitta bosishda saqlang.</p>
+          </div>
+          <button onclick="downloadVCard()" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white border border-slate-700 flex items-center gap-2 whitespace-nowrap">
+            <i class="fa-solid fa-download text-cyan-400"></i>
+            <span>Shirin_Zuhurjonova.vcf yuklab olish</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-[#060910] text-slate-400 text-xs py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-bold text-white font-display text-base">Shirin.</p>
+        <p class="text-slate-500 mt-0.5">© 2026 Zuhurjonova Shirin Shohruh qizi. Barcha huquqlar himoyalangan.</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://t.me/szuhurjonova" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-cyan-400">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://instagram.com/s_zuhurjonova_07" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-purple-400">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="mailto:szuhurjonova@gmail.com" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-cyan-400">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:text-cyan-400">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR STANDALONE LOGIC -->
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+
+    // Copy to clipboard
+    function copyToClip(text, btn) {
+      navigator.clipboard.writeText(text);
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i>';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    }
+
+    // Canvas drawing
+    const canvas = document.getElementById('standalone-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * (window.devicePixelRatio || 1);
+      canvas.height = rect.height * (window.devicePixelRatio || 1);
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+
+      ctx.fillStyle = '#0b0f19';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      ctx.font = '14px Plus Jakarta Sans, sans-serif';
+      ctx.fillStyle = '#64748b';
+      ctx.fillText("🎨 Bu yerda siz ham rasm chizishingiz mumkin!", 20, 35);
+
+      let drawing = false;
+
+      function getPos(e) {
+        const r = canvas.getBoundingClientRect();
+        if (e.touches && e.touches.length > 0) {
+          return { x: e.touches[0].clientX - r.left, y: e.touches[0].clientY - r.top };
+        }
+        return { x: e.clientX - r.left, y: e.clientY - r.top };
+      }
+
+      function start(e) {
+        drawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        ctx.lineCap = 'round';
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#22d3ee';
+      }
+
+      function draw(e) {
+        if (!drawing) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function stop() { drawing = false; }
+
+      canvas.addEventListener('mousedown', start);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stop);
+      canvas.addEventListener('mouseleave', stop);
+
+      canvas.addEventListener('touchstart', start);
+      canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stop);
+    }
+
+    function clearMyCanvas() {
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const rect = canvas.getBoundingClientRect();
+      ctx.fillStyle = '#0b0f19';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+    }
+
+    function downloadMyCanvas() {
+      if (!canvas) return;
+      const a = document.createElement('a');
+      a.download = 'shirin-eskiz.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+    }
+
+    function downloadVCard() {
+      const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Zuhurjonova Shirin Shohruh qizi
+N:Zuhurjonova;Shirin;Shohruh qizi;;
+EMAIL;TYPE=INTERNET:szuhurjonova@gmail.com
+TEL;TYPE=CELL:+998501799115
+X-SOCIALPROFILE;type=telegram:https://t.me/szuhurjonova
+X-SOCIALPROFILE;type=instagram:https://instagram.com/s_zuhurjonova_07
+NOTE:Yosh IT ishqibozi va dasturlash o'quvchisi.
+BDAY:2013-07-13
+END:VCARD`;
+      const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Shirin_Zuhurjonova.vcf';
+      a.click();
+    }
+  </script>
+</body>
+</html>
